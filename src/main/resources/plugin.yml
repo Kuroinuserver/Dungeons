@@ -1,0 +1,8 @@
+name: Dungeons
+version: '${project.version}'
+main: github.io.dungeons.Dungeons
+api-version: '1.19'
+commands:
+  dungeons:
+    description: dungeons
+    aliases: [d]
