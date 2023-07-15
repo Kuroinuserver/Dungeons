@@ -2,12 +2,14 @@ package github.io.dungeons;
 
 import github.io.dungeons.Commands.dungeons;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Dungeons extends JavaPlugin {
     public static JavaPlugin plugin;
     private Listeners listeners;
-    public static String prefix = "§6[§e§lDungeons§6]§r ";
+    public static String prefix = "§6§l[§e§lDungeons§6§l]§r";
 
     @Override
     public void onEnable() {
@@ -46,11 +48,16 @@ public final class Dungeons extends JavaPlugin {
             throw new RuntimeException(e);
         }
         getServer().getPluginManager().registerEvents(this.listeners, this);
+        plugin.saveDefaultConfig();
         super.onEnable();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        super.onDisable();
+    }
+
+    public static JavaPlugin getPlugin() {
+        return plugin;
     }
 }

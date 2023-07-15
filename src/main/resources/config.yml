@@ -6,3 +6,9 @@ mysql:
   database: database
   user: root
   password: password
+level:
+  1: "0"
+  2: "10"
+  3: "100"
+  4: "500"
+  5: "1000"
